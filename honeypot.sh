@@ -5,6 +5,11 @@ sudo apt update
 sudo apt install inetsim
 #curl -O
 #curl -O https://raw.githubusercontent.com/klosnet/inetsim/master/inetsim.conf
+# secondary source for inetsim incase of url filtering
+## curl -O http://35.203.95.218/inetsim_1.2.8-1_all.deb
+## dpkg -i inetsim_1.2.8-1_all.deb -y
+## apt-get install -f -y
+
 # print inetsim configuration file to inetsim.conf
 
 cat <<EOF >> inetsim_lavabit.conf
@@ -1948,3 +1953,4 @@ EOF
 #>> /tmp/inetsim.conf
 
 
+#inetsim --config=inetsim_lavabit.conf --bind-address= hostname -I
