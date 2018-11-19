@@ -3,7 +3,7 @@ sudo echo "deb http://www.inetsim.org/debian/ binary/" > /etc/apt/sources.list.d
 sudo wget -O - http://www.inetsim.org/inetsim-archive-signing-key.asc | apt-key add -
 sudo apt update
 sudo apt install inetsim
-curl -O
+#curl -O
 #curl -O https://raw.githubusercontent.com/klosnet/inetsim/master/inetsim.conf
 # print inetsim configuration file to inetsim.conf
 
