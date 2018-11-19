@@ -1952,5 +1952,6 @@ EOF
 
 #>> /tmp/inetsim.conf
 
+#run inetsim using new config
+inetsim --config=inetsim_lavabit.conf #--bind-address= hostname -I
 
-#inetsim --config=inetsim_lavabit.conf --bind-address= hostname -I
