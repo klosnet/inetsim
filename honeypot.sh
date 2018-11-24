@@ -1,8 +1,13 @@
+#!/bin/bash -eux
+# To allow for autmated installs, we disable interactive configuration steps.
+export DEBIAN_FRONTEND=noninteractive
+export DEBCONF_NONINTERACTIVE_SEEN=true
 #attempt to install inetsim using debian apt packages.
-sudo echo "deb http://www.inetsim.org/debian/ binary/" > /etc/apt/sources.list.d/inetsim.list
-sudo wget -O - http://www.inetsim.org/inetsim-archive-signing-key.asc | apt-key add -
-sudo apt update
-sudo apt install inetsim
+apt install apt-transport-https -y
+echo "deb https://www.inetsim.org/debian/ binary/" > /etc/apt/sources.list.d/inetsim.list
+wget -O - https://www.inetsim.org/inetsim-archive-signing-key.asc | apt-key add -
+apt update -y
+apt install inetsim -y
 #curl -O
 #curl -O https://raw.githubusercontent.com/klosnet/inetsim/master/inetsim.conf
 # secondary source for inetsim incase of url filtering
@@ -12,7 +17,7 @@ sudo apt install inetsim
 
 # print inetsim configuration file to inetsim.conf
 
-cat <<EOF >> inetsim_lavabit.conf
+cat <<EOF >> /etc/inetsim.conf
  #############################################################
 # @klosnet
 # INetSim configuration file
@@ -1952,6 +1957,5 @@ EOF
 
 #>> /tmp/inetsim.conf
 
-#run inetsim using new config
-inetsim --config=inetsim_lavabit.conf #--bind-address= hostname -I
 
+inetsim --config=/etc/inetsim.conf #--bind-address= hostname -I
