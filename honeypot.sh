@@ -5,7 +5,8 @@ export DEBCONF_NONINTERACTIVE_SEEN=true
 #attempt to install inetsim using debian apt packages.
 apt install apt-transport-https --assume-yes
 echo "deb https://www.inetsim.org/debian/ binary/" > /etc/apt/sources.list.d/inetsim.list
-curl -O https://www.inetsim.org/inetsim-archive-signing-key.asc | apt-key add -
+curl -O https://www.inetsim.org/inetsim-archive-signing-key.asc
+apt-key add inetsim-archive-signing-key.asc 
 apt update --assume-yes
 apt install inetsim --assume-yes
 #curl -O
