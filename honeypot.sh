@@ -3,11 +3,11 @@
 export DEBIAN_FRONTEND=noninteractive
 export DEBCONF_NONINTERACTIVE_SEEN=true
 #attempt to install inetsim using debian apt packages.
-apt install apt-transport-https -y
+apt install apt-transport-https --assume-yes
 echo "deb https://www.inetsim.org/debian/ binary/" > /etc/apt/sources.list.d/inetsim.list
-wget -O - https://www.inetsim.org/inetsim-archive-signing-key.asc | apt-key add -
-apt update -y
-apt install inetsim -y
+curl -O - https://www.inetsim.org/inetsim-archive-signing-key.asc | apt-key add -
+apt update --assume-yes
+apt install inetsim --assume-yes
 #curl -O
 #curl -O https://raw.githubusercontent.com/klosnet/inetsim/master/inetsim.conf
 # secondary source for inetsim incase of url filtering
