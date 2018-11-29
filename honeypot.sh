@@ -7,7 +7,7 @@ apt install apt-transport-https --assume-yes
 echo "deb https://www.inetsim.org/debian/ binary/" > /etc/apt/sources.list.d/inetsim.list
 curl --remote-name https://www.inetsim.org/inetsim-archive-signing-key.asc
 apt-key add inetsim-archive-signing-key.asc
-apt update --assume-yes && apt install insetsim --assume-yes
+apt update --assume-yes 
 apt install inetsim --assume-yes
 
 # print inetsim configuration file to inetsim.conf
