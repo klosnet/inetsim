@@ -1,0 +1,31 @@
+#!/bin/bash -eux
+curl https://cpan.metacpan.org/authors/id/R/RH/RHANDOM/Net-Server-2.009.tar.gz --output Net-Server-2.009.tar.gz
+tar xvzf Net-Server-2.009.tar.gz && cd Net-Server-2.009.tar.gz
+./configure && make && make install
+cd ../
+#https://cpan.metacpan.org/authors/id/J/JM/JMORRIS/perlipq-1.25.tar.gz
+curl https://cpan.metacpan.org/authors/id/J/JM/JMORRIS/perlipq-1.25.tar.gz --output perlipq-1.25.tar.gz
+tar xvzf perlipq-1.25.tar.gz && cd perlipq-1.25
+./configure && make && make install
+cd ../
+#https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.060.tar.gz
+curl https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.060.tar.gz --output IO-Socket-SSL-2.060.tar.gz
+tar xvzf IO-Socket-SSL-2.060.tar.gz &&  cd IO-Socket-SSL-2.060
+./configure && make && make install
+cd ../
+#https://cpan.metacpan.org/authors/id/M/MS/MSHELOR/Digest-SHA-6.02.tar.gz
+curl https://cpan.metacpan.org/authors/id/M/MS/MSHELOR/Digest-SHA-6.02.tar.gz --output Digest-SHA-6.02.tar.gz
+tar xvzf Digest-SHA-6.02.tar.gz && cd Digest-SHA-6.02
+./configure && make && make install
+cd ../
+#https://cpan.metacpan.org/authors/id/B/BS/BSUGARS/IPC-Shareable-0.60.tar.gz
+curl https://cpan.metacpan.org/authors/id/B/BS/BSUGARS/IPC-Shareable-0.60.tar.gz --output IPC-Shareable-0.60.tar.gz
+tar xvzf IPC-Shareable-0.60.tar.gz && cd IPC-Shareable-0.60
+./configure && make && make install
+cd ../
+#https://cpan.metacpan.org/authors/id/O/OL/OLAF/Net-DNS-0.68.tar.gz
+curl https://cpan.metacpan.org/authors/id/O/OL/OLAF/Net-DNS-0.68.tar.gz --output Net-DNS-0.68.tar.gz
+tar xvzf Net-DNS-0.68.tar.gz && cd Net-DNS-0.68
+./configure && make && make install
+cd ../
+
