@@ -8,16 +8,16 @@
 #
 export DEBIAN_FRONTEND=noninteractive
 export DEBCONF_NONINTERACTIVE_SEEN=true
-curl -O https://www.inetsim.org/downloads/inetsim-1.2.8.tar.gz
-tar xvzf inetsim-1.2.8.tar.gz && cd inetsim-1.2.8
-bash setup.sh
+#curl -O https://www.inetsim.org/downloads/inetsim-1.2.8.tar.gz
+#tar xvzf inetsim-1.2.8.tar.gz && cd inetsim-1.2.8
+#bash setup.sh
 #install inetsim using debian apt packages.
-##apt install apt-transport-https --assume-yes
-##echo "deb https://www.inetsim.org/debian/ binary/" > /etc/apt/sources.list.d/inetsim.list
-##curl --remote-name https://www.inetsim.org/inetsim-archive-signing-key.asc
-##apt-key add inetsim-archive-signing-key.asc
-##apt update --assume-yes
-##apt install inetsim --assume-yes
+apt install apt-transport-https --assume-yes
+echo "deb https://www.inetsim.org/debian/ binary/" > /etc/apt/sources.list.d/inetsim.list
+curl --remote-name https://www.inetsim.org/inetsim-archive-signing-key.asc
+apt-key add inetsim-archive-signing-key.asc
+apt update --assume-yes
+apt install inetsim --assume-yes
 
 # print inetsim configuration file to inetsim.conf
 
@@ -1961,5 +1961,6 @@ EOF
 
 #>> /etc/inetsim.conf
 
+#--bind-address= hostname -I
+inetsim --config=/etc/inetsim.conf
 
-inetsim --config=/etc/inetsim.conf #--bind-address= hostname -I
